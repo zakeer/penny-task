@@ -1,0 +1,18 @@
+<div class="container">
+
+  <header>
+    <h4>All Public Profiles</h4>
+    <button (click)="logout()" mat-flat-button>Logout</button>
+  </header>
+
+  <div class="profiles">
+    <mat-card *ngFor="let profile of publicProfiles$ | async" class="profile-card">
+      <mat-card-content>
+        <mat-card-title>{{ profile.username }}</mat-card-title>
+        <mat-card-subtitle>{{ profile.email }}</mat-card-subtitle>
+        <p *ngIf="profile.githubLink">GitHub: <a [href]="profile.githubLink" target="_blank">{{ profile.githubLink
+            }}</a></p>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

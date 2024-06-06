@@ -1,0 +1,29 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  gap: 1rem;
+  flex-direction: column;
+  padding: 1rem;
+}
+
+mat-card {
+  max-width: 420px;
+  padding: 2rem;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.forgot-password {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+
+.forgot-password  > * {
+  flex: 1;
+}

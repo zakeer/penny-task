@@ -1,0 +1,27 @@
+<div class="container">
+  <mat-card-title>Sign In</mat-card-title>
+  <mat-card>
+    <form [formGroup]="signinForm" (ngSubmit)="onSubmit()">
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Email address</mat-label>
+        <input matInput formControlName="email" type="email" placeholder="Enter email" />
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Password</mat-label>
+        <input matInput formControlName="password" type="password" placeholder="Enter password" />
+      </mat-form-field>
+
+      <!-- <mat-checkbox formControlName="rememberMe">Remember me</mat-checkbox> -->
+
+      <footer class="forgot-password">
+        <a routerLink="../forgot-password">Forgot password?</a>
+        <button disabled="{{ loading$ | async }}" mat-flat-button color="primary" class="full-width">Submit</button>
+      </footer>
+    </form>
+  </mat-card>
+  <p>Don't have an Account? <a routerLink="../signup">Sign up</a></p>
+
+  <!-- <mat-progress-spinner mode="indeterminate" class="spinner" ></mat-progress-spinner> -->
+
+</div>

@@ -13,6 +13,14 @@ async function bootstrap() {
   initSwagger({ globalPrefix, app })
 
   const port = process.env.PORT || 3000;
+
+  app.enableCors({
+    "origin": "*",
+    "methods": "*",
+    "preflightContinue": false,
+    "optionsSuccessStatus": 204
+  })
+
   await app.listen(port);
   Logger.log(
     `🚀 Application is running on: http://localhost:${port}/${globalPrefix}`

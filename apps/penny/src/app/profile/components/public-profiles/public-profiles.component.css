@@ -1,0 +1,35 @@
+.container {
+  max-width: 1024px;
+  width: 100%;
+  margin: 1em auto 0;
+  padding: 1rem;
+}
+
+
+.container>header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+
+.profiles {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+
+mat-card-subtitle {
+  font-size: small;
+  opacity: .7;
+  margin-bottom: .5rem;
+}
+
+
+@media screen and (max-width: 640px) {
+  .profiles {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}

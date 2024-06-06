@@ -54,7 +54,7 @@ export class AuthService {
     user.resetPasswordExpires = resetPasswordExpires;
     await user.save();
 
-    const resetUrl = `${API.HOST_URL}/${API.AUTH.RESET_PASSWORD.PATH}?${API.AUTH.RESET_PASSWORD.PARAMS.TOKEN}=${resetToken}`;
+    const resetUrl = `${API.HOST_URL}/auth/${API.AUTH.RESET_PASSWORD.PATH}?${API.AUTH.RESET_PASSWORD.PARAMS.TOKEN}=${resetToken}`;
     const mailText = resetPasswordTemplate(resetUrl);
 
     await this.emailService.sendMail(user.email, API.AUTH.RESET_PASSWORD.SUMMARY, mailText);
